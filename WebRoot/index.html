@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Test</title>
+		<script type="text/javascript" src="jquery-1.8.0.min.js"></script>
+		<script>
+			function run(){
+				$.ajax({
+					url:'index/ajax.do',
+					type:"get",
+					data:{"id":293},
+					async: false,
+					dataType: 'json',
+					success:function(data,textStatus){
+						if(data!=null){
+							alert(data.name+':'+data.age);
+						}
+					}
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<p><a href="index/hello.do?id=7">hello</a></p>
+		<p><a href="index/greeting.do?id=8">greet</a></p>
+		<p><a href="javascript:void(0)" onclick="javascript:run()">ajax</a></p>
+	</body>
+</html>
